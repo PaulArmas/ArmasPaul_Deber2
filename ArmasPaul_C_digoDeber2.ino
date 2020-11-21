@@ -11,7 +11,7 @@ const int D = 11; //decodificador
 const int btn = 7;
 const int unidades = 12;
 const int decenas = 13;
-int cont;
+int cont = 0;
 int i;
 bool primo;
 int uni;
@@ -31,7 +31,7 @@ void setup() {
 void loop() {
   if(digitalRead(btn)==HIGH){   //Cuando se pulse el boton
     // Desde la linea 34 a la 43, unicamente son las condiciones para evaluar los números primos y arrojar un VERDADERO cuando se halle un primo.
-    for(cont=1; cont<=99; cont++){
+    cont++;
       primo = true; 
       for (i=2; i<cont; i++){
         if (cont%i == 0){
@@ -60,10 +60,7 @@ void loop() {
         digitalWrite(decenas,LOW);
         contador(uni);
         delay(300); 
-      }
     }
-  digitalWrite(unidades,LOW);
-  digitalWrite(decenas,LOW);
   }
 }
 
